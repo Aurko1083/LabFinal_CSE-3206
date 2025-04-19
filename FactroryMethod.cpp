@@ -42,5 +42,14 @@ public:
     }
 };
 
+int main() {
+    unique_ptr<Vehicle> car = VehicleFactory::createVehicle("Car");
+    unique_ptr<Vehicle> bike = VehicleFactory::createVehicle("Bike");
+    unique_ptr<Vehicle> truck = VehicleFactory::createVehicle("Truck");
 
+    if (car) car->drive();
+    if (bike) bike->drive();
+    if (truck) truck->drive();
 
+    return 0;
+}
